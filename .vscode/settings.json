@@ -1,5 +1,7 @@
 {
     "workbench.colorCustomizations": {
+        "commandCenter.background": "#e53a9c",
+        "commandCenter.foreground": "#ffffff",
         "activityBar.activeBackground": "#e53a9c",
         "activityBar.background": "#07abff",
         "activityBar.foreground": "#ffffff",
@@ -17,8 +19,6 @@
         "titleBar.activeForeground": "#07abff",
         "titleBar.border": "#e53a9c",
         "titleBar.inactiveBackground": "#bb5fff",
-        "titleBar.inactiveForeground": "#15202b99",
-        "commandCenter.background": "#e53a9c",
-        "commandCenter.foreground": "#ffffff"
+        "titleBar.inactiveForeground": "#15202b99"
     }
 }
