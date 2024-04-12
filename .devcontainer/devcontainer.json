@@ -1,23 +1,91 @@
-
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Node.js & TypeScript",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye"
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+    "name": "evnt",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    // "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+    "context": "..",
+    "dockerFile": "Dockerfile",
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+        3000 // NextJS App
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "NextJS App",
+            "onAutoForward": "notify"
+        }
+    },
+    "mounts": [
+        // {
+        // 	"source": "${env:HOME}${env:USERPROFILE}/.ssh",
+        // 	"type": "bind",
+        // 	"target": "/home/node/.ssh",
+        // 	"consistency": "cached",
+        // 	"readonly": true,
+        // }
+    ],
+    // Configure tool-specific properties.
+    "customizations": {
+        "codespaces": {},
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "github.copilot",
+                "johnpapa.vscode-peacock",
+                "yo1dog.cursor-align",
+                // "visualstudioexptteam.vscodeintellicode",
+                "ms-azuretools.vscode-docker",
+                "streetsidesoftware.code-spell-checker",
+                "esbenp.prettier-vscode",
+                "ms-vscode.vscode-typescript-next",
+                "yoavbls.pretty-ts-errors",
+                "dsznajder.es7-react-js-snippets",
+                "christian-kohler.npm-intellisense",
+                "anseki.vscode-color",
+                "AntiAntiSepticeye.vscode-color-picker"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash -l",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "bash",
+                        "args": [
+                            "--login"
+                        ],
+                        "icon": "terminal-bash"
+                    }
+                },
+                "workbench.colorCustomizations": {
+                    "activityBar.activeBackground": "#e53a9c",
+                    "activityBar.background": "#07abff",
+                    "activityBar.foreground": "#ffffff",
+                    "activityBar.inactiveForeground": "#781fb8",
+                    "activityBarBadge.background": "#bb5fff",
+                    "activityBarBadge.foreground": "#e7e7e7",
+                    "commandCenter.border": "#15202b99",
+                    "sash.hoverBorder": "#e53a9c",
+                    "statusBar.background": "#79b1b9",
+                    "statusBar.foreground": "#15202b",
+                    "statusBarItem.hoverBackground": "#589da7",
+                    "statusBarItem.remoteBackground": "#bb5fff",
+                    "statusBarItem.remoteForeground": "#e7e7e7",
+                    "titleBar.activeBackground": "#781fb8",
+                    "titleBar.activeForeground": "#07abff",
+                    "titleBar.border": "#e53a9c",
+                    "titleBar.inactiveBackground": "#bb5fff",
+                    "titleBar.inactiveForeground": "#15202b99",
+                    "commandCenter.background": "#e53a9c",
+                    "commandCenter.foreground": "#ffffff"
+                }
+                // "github.gitProtocol": "ssh"
+            }
+        }
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "echo 'Container ready!'"
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
 }
