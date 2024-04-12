@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import "@/styles/globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Open_Sans } from "next/font/google";
 
 import "@rainbow-me/rainbowkit/styles.css";
@@ -9,17 +9,33 @@ import { Providers } from "./providers";
 
 const open_sans = Open_Sans({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
-  title: "Next-Web3-Boilerplate",
-  applicationName: "Next Web3 Boilerplate",
-  description: "Next.js Web3 boilerplate built on Wagmi, Viem, and Rainbow",
+  title: "YUNN Quest | evnt.fi",
+  applicationName: "YUNN Quest",
+  description:
+    "A blockchain game.",
   authors: {
-    name: "Pedrojok01",
-    url: "https://github.com/Pedrojok01/Next-Web3-Boilerplate",
+    name: "Liam C",
+    url: "https://github.com/mcorrig4",
   },
+  // themeColor: "dark",
+  // viewport: "width=device-width, initial-scale=1",
   icons: "favicon.ico",
   manifest: "site.webmanifest",
 };
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: "device-width",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#151b28" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+  ],
+  userScalable: false,
+  // colorScheme: 'dark'
+};
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (

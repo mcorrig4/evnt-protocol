@@ -18,15 +18,7 @@
             "onAutoForward": "notify"
         }
     },
-    "mounts": [
-        // {
-        // 	"source": "${env:HOME}${env:USERPROFILE}/.ssh",
-        // 	"type": "bind",
-        // 	"target": "/home/node/.ssh",
-        // 	"consistency": "cached",
-        // 	"readonly": true,
-        // }
-    ],
+    // "mounts": [    ],
     // Configure tool-specific properties.
     "customizations": {
         "codespaces": {},
