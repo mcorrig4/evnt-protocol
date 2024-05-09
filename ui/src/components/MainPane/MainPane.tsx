@@ -15,6 +15,7 @@ import {
   TransferNative,
   SignMessage,
 } from "./components";
+import { EvntFiLogo } from "../EvntFiLogo";
 
 const MainPane: FC = () => {
   const { isConnected } = useAccount();
@@ -27,6 +28,7 @@ const MainPane: FC = () => {
     >
       <Heading as="h2" fontSize={"2rem"} mb={10} className="text-shadow">
         Display Info
+        <EvntFiLogo />
       </Heading>
 
       <Flex className={styles.content}>

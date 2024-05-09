@@ -2,6 +2,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 
 import { Footer, Header, MainPane } from "@/components";
+import { FooterNew } from "../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Box>
 
       <Footer />
+      <FooterNew />
     </Flex>
   );
 }
