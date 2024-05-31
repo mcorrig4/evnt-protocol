@@ -9,6 +9,14 @@ import { Providers } from "./providers";
 
 const open_sans = Open_Sans({ subsets: ["latin"] });
 
+import { Inter } from "next/font/google";
+import "@/styles/styles.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "YUNN Quest | evnt.fi",
@@ -40,7 +48,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={open_sans.className}>
+      {/* <body className={open_sans.className}> */}
+      <body className={inter.variable}>
         <Providers>{children}</Providers>
       </body>
     </html>

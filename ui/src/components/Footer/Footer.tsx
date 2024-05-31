@@ -60,5 +60,5 @@ function Component() {
     </footer>
   );
 }
-export { Component as FooterNew };
+// export { Component as FooterNew };
 export default Footer;
